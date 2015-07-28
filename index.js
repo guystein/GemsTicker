@@ -90,6 +90,45 @@ app.get('/', function (req, res) {
 
 });
 
+app.get('/file', function (req, res) {
+
+    console.log('start get');
+
+    q.all([getTemplate()]).then(function (output) {
+        console.log('output returned');
+
+        var html = output[0],
+            price = parseFloat(2.43242 * 100, 2).toFixed(2),
+            now = new Date();
+
+        var minutes = "" + now.getMinutes();
+        minutes = minutes.length == 1 ? "0" + minutes : minutes;
+        var dateText = now.getHours() + ":" + minutes;
+
+        html = html.replace('$$$', price + '$');
+        html = html.replace('00:00', dateText);
+
+        //$(html)
+        //    .find('.dollars')
+        //    .text(price + "$")
+        //    .end()
+        //    .find('.time')
+        //    .text('20:45');
+
+        res.send(html);
+
+        //res.send(output[0]);
+
+        //res.send(html);
+
+    }, function (error) {
+        console.log('error', error);
+    });
+
+
+
+});
+
 var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
