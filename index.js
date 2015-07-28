@@ -7,6 +7,8 @@ var fs = require('fs');
 var $ = require('jquery');
 
 function getPrice() {
+    console.log('get price start');
+
     var deferred = q.defer();
 
     var url = "http://coinmarketcap-nexuist.rhcloud.com/api/gemz";
@@ -15,6 +17,8 @@ function getPrice() {
         url: url,
         json: true
     }, function (error, response, body) {
+        console.log('get price done');
+
         if (!error && response.statusCode === 200) {
             deferred.resolve(body.price.usd);
         } else {
@@ -26,9 +30,13 @@ function getPrice() {
 }
 
 function getTemplate() {
+
+    console.log('get template start');
+
     var deferred = q.defer();
 
     fs.readFile('views/main.html', 'utf8', function (err,data) {
+        console.log('get template done');
         if (err) {
             deferred.reject(error);
         } else {
@@ -45,7 +53,10 @@ app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
 
+    console.log('start get');
+
     q.all([getPrice(), getTemplate()]).then(function (output) {
+        console.log('output returned');
 
         var html = output[1],
             price = parseFloat(output[0] * 100, 2).toFixed(2),
@@ -71,6 +82,8 @@ app.get('/', function (req, res) {
 
         //res.send(html);
 
+    }, function (error) {
+        console.log('error', error);
     });
 
 
