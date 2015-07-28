@@ -84,7 +84,7 @@ app.get('/', function (req, res) {
 
     }, function (error) {
         console.log('error', error);
-    });§
+    });
 
 
 
