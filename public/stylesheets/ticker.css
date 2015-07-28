@@ -1,0 +1,55 @@
+.container {
+  border: 2px solid #EA7A78;
+  width: 241px;
+  height: 52px;
+  padding: 10px 5px;
+  overflow: hidden;
+}
+.container .image-container {
+  float: left;
+  width: 70px;
+  height: 65px;
+}
+.container .image-container .image {
+  background-image: url(/public/gems-logo-red.png);
+  width: 65px;
+  height: 65px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.container .data-container {
+  position: relative;
+  top: -5px;
+  float: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 160px;
+  padding: 5px;
+}
+.container .data-container h2 {
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  font-weight: lighter;
+}
+.container .data-container .update-time {
+  font-size: 0.7em;
+  color: #999;
+  text-align: center;
+}
+.container .data-container .update-time span {
+  font-weight: lighter;
+}
+.container .data-container .rate {
+  font-size: 1.3em;
+}
+.sublime-message {
+  font-size: 0.8em;
+  color: gray;
+  text-indent: 3px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: lighter;
+  color: #EA7A78;
+}
+a {
+  text-decoration: none;
+}

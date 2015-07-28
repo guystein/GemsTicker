@@ -1,26 +1,26 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.4",
-  "description": "A sample Node.js app using Express 4",
+  "name": "gemticker",
+  "version": "1.0.0",
+  "description": "NodeJS script that generates an image with the current GEMS to dollars exchange rate",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "dependencies": {
-    "ejs": "^2.3.1",
-    "express": "~4.9.x"
-  },
-  "engines": {
-    "node": "0.12.2"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "git+https://github.com/guystein/GemsTicker.git"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  "author": "Guy Stein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guystein/GemsTicker/issues"
+  },
+  "homepage": "https://github.com/guystein/GemsTicker#readme",
+  "dependencies": {
+    "express": "^4.13.1",
+    "jquery": "^2.1.4",
+    "moment": "^2.10.6",
+    "q": "^1.4.1",
+    "request": "^2.60.0"
+  }
 }
